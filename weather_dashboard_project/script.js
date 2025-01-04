@@ -1,4 +1,4 @@
-const API_KEY = '458153ff0e96fd558fda8e9fab1d0abd'; 
+const API_KEY = config.API_KEY; 
 
 // DOM Elements
 const searchInput = document.getElementById('search-input');
