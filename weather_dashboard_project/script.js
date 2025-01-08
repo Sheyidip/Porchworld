@@ -1,3 +1,15 @@
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+// Initialize Firebase Authentication
+const auth = getAuth();
+
+// Redirect unauthenticated users to signup page
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        window.location.href = 'auth.html'; // Replace with your signup page path
+    }
+});
+
+
 const API_KEY = '458153ff0e96fd558fda8e9fab1d0abd'; 
 
 // DOM Elements
