@@ -5,7 +5,7 @@ const auth = getAuth();
 // Redirect unauthenticated users to signup page
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = 'auth.html'; // Replace with your signup page path
+        window.location.href = '/auth.html'; // Replace with your signup page path
     }
 });
 
