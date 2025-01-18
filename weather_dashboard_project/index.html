@@ -9,57 +9,107 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="search-box">
-            <input type="text" placeholder="Enter city name" id="search-input">
-            <button id="search-button">
-                <i class="fas fa-search"></i>
-            </button>
+    <!-- Auth Container -->
+    <div class="auth-container" id="auth-container">
+        <!-- Login Form -->
+        <div class="auth-form" id="login-form">
+            <h2>Login to Weather Dashboard</h2>
+            <form onsubmit="return login(event)">
+                <div class="form-group">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="toggleForms('register')">Register</a></p>
         </div>
-        
-        <div class="weather-info" id="weather-info">
-            <div class="location">
-                <h2 id="city">City Name</h2>
-                <p id="date">Date</p>
-            </div>
-            
-            <div class="weather-display">
-                <img id="weather-icon" src="" alt="Weather Icon">
-                <h1 id="temperature">--°C</h1>
-                <p id="description">Weather Description</p>
-            </div>
-            
-            <div class="weather-details">
-                <div class="detail">
-                    <i class="fas fa-temperature-high"></i>
-                    <div>
-                        <p>Feels Like</p>
-                        <p id="feels-like">--°C</p>
-                    </div>
+
+        <!-- Register Form -->
+        <div class="auth-form hidden" id="register-form">
+            <h2>Create Account</h2>
+            <form onsubmit="return register(event)">
+                <div class="form-group">
+                    <input type="text" id="register-name" placeholder="Full Name" required>
                 </div>
-                <div class="detail">
-                    <i class="fas fa-tint"></i>
-                    <div>
-                        <p>Humidity</p>
-                        <p id="humidity">--%</p>
-                    </div>
+                <div class="form-group">
+                    <input type="email" id="register-email" placeholder="Email" required>
                 </div>
-                <div class="detail">
-                    <i class="fas fa-wind"></i>
-                    <div>
-                        <p>Wind Speed</p>
-                        <p id="wind-speed">-- m/s</p>
-                    </div>
+                <div class="form-group">
+                    <input type="password" id="register-password" placeholder="Password" required>
                 </div>
-            </div>
-        </div>
-        
-        <div class="error" id="error">
-            <p>City not found. Please try again.</p>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="toggleForms('login')">Login</a></p>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Weather Dashboard Container (Initially Hidden) -->
+    <div class="dashboard-container hidden" id="dashboard-container">
+        <!-- User Info -->
+        <div class="user-info">
+            <span id="user-name">Welcome!</span>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+
+        <!-- Weather Search and Display (Your existing weather dashboard HTML) -->
+        <div class="container">
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name" id="search-input">
+                <button id="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <div class="weather-info" id="weather-info">
+                <div class="location">
+                    <h2 id="city">City Name</h2>
+                    <p id="date">Date</p>
+                </div>
+                
+                <div class="weather-display">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                    <h1 id="temperature">--°C</h1>
+                    <p id="description">Weather Description</p>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="detail">
+                        <i class="fas fa-temperature-high"></i>
+                        <div>
+                            <p>Feels Like</p>
+                            <p id="feels-like">--°C</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <p>Humidity</p>
+                            <p id="humidity">--%</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <p>Wind Speed</p>
+                            <p id="wind-speed">-- m/s</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="error" id="error">
+                <p>City not found. Please try again.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="config.js"></script>
-<script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+Last edited 1 hour ago
+
+
