@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function checkAuth() {
     const user = JSON.parse(localStorage.getItem('weatherUser'));
     if (user) {
@@ -76,7 +76,7 @@ function showDashboard(user) {
     document.getElementById('dashboard-container').classList.remove('hidden');
     document.getElementById('user-name').textContent = `Welcome, ${user.name}!`;
 }
-=======
+
 // Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
@@ -138,7 +138,7 @@ loginForm.addEventListener("submit", (e) => {
             alert(`Welcome back, ${user.email}!`);
             loginForm.reset();
             // Redirect to index.html after login
-            window.location.href = 'index.html';
+            window.location.href = 'dashboard.html';
         })
         .catch((error) => {
             const errorMessage = error.message;
@@ -166,4 +166,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
->>>>>>> 61fcfce0709af5bdeea86a4808e9675b64f03ba2
+
