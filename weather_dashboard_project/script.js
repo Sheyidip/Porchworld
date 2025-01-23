@@ -1,11 +1,26 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
 // Initialize Firebase Authentication
-const auth = getAuth();
 
+const firebaseConfig = {
+    apiKey: "AIzaSyABQEO9trAspyRxUkESB3317Aj3mp85CiA",
+    authDomain: "weather-dashboard-d3829.firebaseapp.com",
+    projectId: "weather-dashboard-d3829",
+    storageBucket: "weather-dashboard-d3829.firebasestorage.app",
+    messagingSenderId: "710138944776",
+    appId: "1:710138944776:web:ae88c2688b177b715960bd",
+    measurementId: "G-W8QLJ30028"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 // Redirect unauthenticated users to signup page
 onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        window.location.href = 'auth.html'; // Replace with your signup page path
+    if (user) {
+        window.location.href = 'dashboard.html'; // Replace with your signup page path
+    }
+    else {
+        window.location.href = 'auth.html';
     }
 });
 

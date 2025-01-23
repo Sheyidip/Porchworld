@@ -103,10 +103,11 @@ body {
     background: #c82333;
 }
 
-/* Utility Classes */
+/* Utility Classes 
 .hidden {
     display: none !important;
 }
+    */
 
 /* Original Weather Dashboard Styles */
 .container {
