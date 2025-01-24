@@ -162,6 +162,8 @@ function displayAdditionalInfo(data) {
 
 
 // Automatically fetch weather by geolocation
+ 
+/*
 window.addEventListener('load', () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -192,7 +194,7 @@ async function getWeatherByCoords(lat, lon) {
         weatherInfo.style.display = 'none';
     }
 }
-
+*/
 // Set Initial State for Dark Mode and Unit Toggle
 if (darkMode) document.body.classList.add('dark-mode');
 if (currentUnit === 'imperial') document.getElementById('unit-toggle').textContent = '°F / °C';

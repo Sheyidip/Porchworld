@@ -45,7 +45,7 @@ if (signupForm) {
                 const user = userCredential.user;
                 alert(`User ${user.email} signed up successfully!`);
                 signupForm.reset();
-                window.location.href = 'index.html';
+                window.location.href = 'auth.html';
             })
             .catch((error) => {
                 displayError(error.message);
