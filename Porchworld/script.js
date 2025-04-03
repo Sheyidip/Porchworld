@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cartCount = document.getElementById('cartCount');
     let cart = [];
-  
+
     // Sample Products
     const products = [
       { id: 1, name: 'Interior Paint', price: 50, image: 'paint1.jpg' },
       { id: 2, name: 'Exterior Paint', price: 70, image: 'paint2.jpg' },
       { id: 3, name: 'Specialty Paint', price: 90, image: 'paint3.jpg' },
     ];
-  
+
     const productGrid = document.getElementById('productGrid');
-  
+
     // Render Products
     products.forEach(product => {
       const productItem = document.createElement('div');
