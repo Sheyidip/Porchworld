@@ -32,4 +32,3 @@ document.addEventListener('DOMContentLoaded', function () {
       alert(`${product.name} added to cart!`);
     };
   });
-  
