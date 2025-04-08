@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       `;
       productGrid.appendChild(productItem);
     });
-  
+
     // Add to Cart Function
     window.addToCart = function (productId) {
       const product = products.find(p => p.id === productId);
